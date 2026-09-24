@@ -1,0 +1,167 @@
+{
+  "basics": {
+    "name": "Hasan Abdullah Jan",
+    "shortName": "HAJ",
+    "label": "Coder",
+    "headline": "I Code quality systems that give engineering teams speed, confidence, and executive-level clarity.",
+    "summary": "Coding Expert based in Karachi, Pakistan. I lead AI automation strategy across web, mobile, desktop, and API ecosystems, build durable frameworks from the ground up, and help organizations turn quality into a delivery advantage instead of a release bottleneck.",
+    "location": {
+      "country": "Pakistan",
+      "countryCode": "PK",
+      "region": "Karachi"
+    },
+    "email": "hasanabdullahjan@gmail.com",
+    "availability": "Currently implementing Design Thinking at GU Tech  since September 2026.",
+    "leadershipNote": "Trusted by product and engineering leaders to bring structure, visibility, and dependable release confidence to complex delivery environments.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "hasanabdullahjan",
+        "url": "https://www.linkedin.com/in/hasanabdullahjan/",
+        "icon": "fa-brands fa-linkedin-in"
+      },
+      {
+        "network": "GitHub",
+        "username": "hasanabdullahjan",
+        "url": "https://github.com/hasanabdullahjan",
+        "icon": "fa-brands fa-github"
+      },
+      {
+        "network": "Stack Overflow",
+        "username": "hasanabdullahjan",
+        "url": "https://stackoverflow.com/users/20954212/hasanabdullahjan",
+        "icon": "fa-brands fa-stack-overflow"
+      }
+    ]
+  },
+  "about": {
+    "intro": [
+      "I specialize in turning fragmented QA efforts into durable quality platforms that scale with product complexity. My work sits at the intersection of architecture, delivery strategy, test engineering, and organizational enablement.",
+      "Over the last several years, I have led automation initiatives across telecom, healthcare, SaaS, and enterprise tooling, building frameworks from scratch, coaching teams, and creating the systems leaders rely on when release confidence matters."
+    ],
+    "strengths": [
+      "Framework architecture for web, mobile, desktop, and API testing",
+      "Quality strategy for distributed engineering teams and fast release cycles",
+      "CI/CD integration, reporting, and release confidence automation",
+      "Mentoring QA engineers and aligning stakeholders around measurable quality outcomes"
+    ],
+    "leadershipPillars": [
+      {
+        "title": "Architecture",
+        "description": "Designing maintainable automation ecosystems that support scale instead of creating future drag."
+      },
+      {
+        "title": "Leadership",
+        "description": "Guiding QA engineers, influencing stakeholders, and building stronger engineering habits around quality."
+      },
+      {
+        "title": "Impact",
+        "description": "Connecting test strategy to faster releases, clearer visibility, and higher confidence in production readiness."
+      }
+    ],
+    "metrics": [
+      {
+        "value": "8+",
+        "label": "Years building and scaling automation systems"
+      },
+      {
+        "value": "4",
+        "label": "Core test surfaces across modern product stacks"
+      },
+      {
+        "value": "3",
+        "label": "Industries supported with architecture-level QA leadership"
+      },
+      {
+        "value": "Multi-team",
+        "label": "Leadership across distributed automation and QA functions"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "category": "Architecture",
+      "items": [
+        "Automation Framework Design",
+        "Test Strategy",
+        "Quality Governance",
+        "Release Readiness"
+      ]
+    },
+    {
+      "category": "Web, Mobile, API",
+      "items": [
+        "Selenium",
+        "Playwright",
+        "Appium",
+        "Rest Assured",
+        "Postman"
+      ]
+    },
+    {
+      "category": "Languages",
+      "items": [
+        "Java",
+        "Python",
+        "JavaScript",
+        "C#",
+        "SQL"
+      ]
+    },
+    {
+      "category": "Delivery Systems",
+      "items": [
+        "Jenkins",
+        "GitLab CI",
+        "Docker",
+        "AWS",
+        "Kubernetes"
+      ]
+    }
+  ],
+
+
+
+  "education": [
+    {
+      "institution": "GU Tech",
+      "area": "Computer Science",
+      "studyType": "Bachelor of Science (BS)",
+      "detailsLabel": "Course Tracks",
+      "details": [
+        "Machine Learning",
+        "Quantum Programming",
+        "Computer Networks",
+        "Cloud Computing",
+        "Requirement Engineering"
+      ],
+      "startDate": "2026-01-01",
+      "endDate": "2026-12-01"
+    },
+    {
+      "institution": "Baitussalam",
+      "area": "Computer Science",
+      "studyType": "O-Levels",
+      "detailsLabel": "Core Courses",
+      "details": [
+        "Object-Oriented Programming",
+        "Database Systems",
+        "Operating Systems",
+        "Computer Networks",
+        "Software Engineering"
+      ],
+      "startDate": "2025-01-01",
+      "endDate": "2025-08-01"
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "Urdu",
+      "fluency": "Native"
+    }
+  ]
+}

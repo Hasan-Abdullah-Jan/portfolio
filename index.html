@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hasan Abdullah Jan — Aspiring AI Engineer & Multidisciplinary Student</title>
+  <meta name="description" content="Hasan Abdullah Jan — Multidisciplinary student and aspiring Agentic AI Engineer exploring AI automation, creative media, and Islamic scholarship.">
+  <meta name="author" content="Hasan Abdullah Jan">
+  <meta name="theme-color" content="#0c0b10">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hasan Abdullah Jan — Aspiring Agentic AI Engineer">
+  <meta property="og:description" content="Multidisciplinary student working at the intersection of technology, creativity, business, and problem solving.">
+  <meta property="og:type" content="website">
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="#hero" class="nav__logo" aria-label="Home">
+        <span class="nav__logo-accent">&lt;</span>HAJ<span class="nav__logo-accent"> /&gt;</span>
+      </a>
+
+      <div class="nav__links" id="nav-links">
+        <a href="#about" class="nav__link">About</a>
+        <a href="#skills" class="nav__link">Skills</a>
+        <a href="#experience" class="nav__link">Experience</a>
+        <a href="#projects" class="nav__link">Projects</a>
+        <a href="#education" class="nav__link">Education</a>
+        <a href="#contact" class="nav__link">Contact</a>
+      </div>
+
+      <div class="nav__actions">
+        <div class="nav__socials">
+          <a href="https://www.linkedin.com/in/hasanabdullahjan/" target="_blank" rel="noopener noreferrer" class="nav__icon-btn" aria-label="LinkedIn Profile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="https://github.com/Hasan-Abdullah-Jan" target="_blank" rel="noopener noreferrer" class="nav__icon-btn" aria-label="GitHub Profile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/@alshamsmedia" target="_blank" rel="noopener noreferrer" class="nav__icon-btn" aria-label="YouTube Channel">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+            </svg>
+          </a>
+        </div>
+        <button class="nav__icon-btn theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
+
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="nav__mobile-menu" id="mobile-menu">
+      <a href="#about" class="nav__link">About</a>
+      <a href="#skills" class="nav__link">Skills</a>
+      <a href="#experience" class="nav__link">Experience</a>
+      <a href="#projects" class="nav__link">Projects</a>
+      <a href="#education" class="nav__link">Education</a>
+      <a href="#contact" class="nav__link">Contact</a>
+      <div class="nav__socials">
+        <a href="https://www.linkedin.com/in/hasanabdullahjan/" target="_blank" rel="noopener noreferrer" class="nav__social-link" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+        <a href="https://github.com/Hasan-Abdullah-Jan" target="_blank" rel="noopener noreferrer" class="nav__social-link" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+        </a>
+        <a href="https://www.youtube.com/@alshamsmedia" target="_blank" rel="noopener noreferrer" class="nav__social-link" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/>
+            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero section" id="hero">
+    <div class="hero__ambient" aria-hidden="true">
+      <div class="hero__orb hero__orb--1"></div>
+      <div class="hero__orb hero__orb--2"></div>
+      <div class="hero__orb hero__orb--3"></div>
+      <div class="hero__grid"></div>
+    </div>
+
+    <div class="container hero__content">
+      <div class="hero__badge reveal">
+        <span class="hero__badge-dot"></span>
+        Currently studying at Al Ghazali University School of Technology
+      </div>
+
+      <p class="hero__greeting reveal reveal-delay-1">Hello, I'm</p>
+
+      <h1 class="hero__name reveal reveal-delay-2">
+        Hasan Abdullah Jan
+      </h1>
+
+      <p class="hero__headline reveal reveal-delay-3">
+        A multidisciplinary student and aspiring <strong>Agentic AI Engineer</strong> working at the intersection of technology, creativity, and business.
+      </p>
+
+      <div class="hero__cta-group reveal reveal-delay-4">
+        <a href="#projects" class="btn btn--primary" id="cta-view-work">
+          View My Work
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+        <a href="#contact" class="btn btn--secondary" id="cta-contact">
+          Contact Me
+        </a>
+        <a href="https://github.com/Hasan-Abdullah-Jan" target="_blank" rel="noopener noreferrer" class="btn btn--icon" aria-label="GitHub Profile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <span class="section-label reveal">About</span>
+      <h2 class="section-title reveal">Technology, creativity, <br>and continuous learning.</h2>
+
+      <div class="about__grid">
+        <div class="about__text reveal">
+          <p>
+            I am a multidisciplinary student with a background spanning Computer Science, creative media, digital marketing, and formal Islamic scholarship. My long-term goal is to become a professional AI engineer and eventually build technology-driven products that solve meaningful real-world problems.
+          </p>
+          <p>
+            My learning approach is highly practical and experimental: I enjoy understanding a complex problem, breaking it down into manageable parts, testing possible solutions, and transforming what I learn into tangible, impactful work.
+          </p>
+
+          <div class="about__strengths">
+            <h3>Core Focus Areas</h3>
+            <div class="about__strength-item">Agentic AI, generative AI, and intelligent automation systems</div>
+            <div class="about__strength-item">Creative digital media, content creation, and marketing strategy</div>
+            <div class="about__strength-item">Hands-on problem solving, web technologies, and software design</div>
+            <div class="about__strength-item">Interdisciplinary perspective bridging modern technology and Islamic thought</div>
+          </div>
+        </div>
+
+        <div class="about__pillars">
+          <div class="pillar-card reveal reveal-delay-1">
+            <h3 class="pillar-card__title">
+              <span class="pillar-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                  <polyline points="2 17 12 22 22 17"/>
+                  <polyline points="2 12 12 17 22 12"/>
+                </svg>
+              </span>
+              Technology
+            </h3>
+            <p class="pillar-card__desc">Exploring intelligent systems, Agentic AI, and programming to build future-ready, automated solutions.</p>
+          </div>
+
+          <div class="pillar-card reveal reveal-delay-2">
+            <h3 class="pillar-card__title">
+              <span class="pillar-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </span>
+              Creative Media
+            </h3>
+            <p class="pillar-card__desc">Managing digital media, video editing, and executing marketing strategies to build engaged communities.</p>
+          </div>
+
+          <div class="pillar-card reveal reveal-delay-3">
+            <h3 class="pillar-card__title">
+              <span class="pillar-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                </svg>
+              </span>
+              Scholarship
+            </h3>
+            <p class="pillar-card__desc">Pursuing formal, international-level Islamic studies to cultivate a deeply grounded interdisciplinary worldview.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Metrics -->
+      <div class="about__metrics">
+        <div class="metric reveal">
+          <div class="metric__value">3</div>
+          <div class="metric__label">Core disciplines: Technology, Creative Media, and Islamic Scholarship</div>
+        </div>
+        <div class="metric reveal reveal-delay-1">
+          <div class="metric__value">4th</div>
+          <div class="metric__label">Year of formal international-level Islamic studies</div>
+        </div>
+        <div class="metric reveal reveal-delay-2">
+          <div class="metric__value">AI</div>
+          <div class="metric__label">Specialized focus on Agentic AI and intelligent automation</div>
+        </div>
+        <div class="metric reveal reveal-delay-3">
+          <div class="metric__value">Practical</div>
+          <div class="metric__label">Experimental approach to learning, research, and building</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== SKILLS SECTION ===== -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <span class="section-label reveal">Skills</span>
+      <h2 class="section-title reveal">My toolkit</h2>
+      <p class="section-subtitle reveal">A multidisciplinary foundation spanning programming, creative content, and strategic problem solving.</p>
+
+      <div class="skills__grid">
+        <!-- Technology & AI -->
+        <div class="skill-category reveal">
+          <div class="skill-category__header">
+            <div class="skill-category__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"/>
+                <polyline points="8 6 2 12 8 18"/>
+              </svg>
+            </div>
+            <h3 class="skill-category__title">Technology & AI</h3>
+          </div>
+          <div class="skill-category__items">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">HTML / CSS / JS</span>
+            <span class="skill-tag">Agentic AI</span>
+            <span class="skill-tag">Generative AI</span>
+            <span class="skill-tag">AIOps</span>
+            <span class="skill-tag">Blockchain Research</span>
+          </div>
+        </div>
+
+        <!-- Creative & Business -->
+        <div class="skill-category reveal reveal-delay-1">
+          <div class="skill-category__header">
+            <div class="skill-category__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <h3 class="skill-category__title">Creative & Business</h3>
+          </div>
+          <div class="skill-category__items">
+            <span class="skill-tag">Digital Marketing</span>
+            <span class="skill-tag">Video Editing</span>
+            <span class="skill-tag">Content Creation</span>
+            <span class="skill-tag">Graphic Design</span>
+            <span class="skill-tag">E-commerce</span>
+            <span class="skill-tag">Market & Customer Research</span>
+          </div>
+        </div>
+
+        <!-- General Skills -->
+        <div class="skill-category reveal reveal-delay-2" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto;">
+          <div class="skill-category__header">
+            <div class="skill-category__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+              </svg>
+            </div>
+            <h3 class="skill-category__title">Methodology & Soft Skills</h3>
+          </div>
+          <div class="skill-category__items">
+            <span class="skill-tag">Design Thinking</span>
+            <span class="skill-tag">Problem Solving</span>
+            <span class="skill-tag">Research & Analysis</span>
+            <span class="skill-tag">Presentation</span>
+            <span class="skill-tag">Mentoring</span>
+            <span class="skill-tag">Project Management</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== EXPERIENCE SECTION ===== -->
+  <section class="experience section" id="experience">
+    <div class="container">
+      <span class="section-label reveal">Experience</span>
+      <h2 class="section-title reveal">Practical journey</h2>
+      <p class="section-subtitle reveal">Balancing rigorous academic study with real-world creative leadership, digital media management, and technology exploration.</p>
+
+      <div class="experience__timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-item__dot"></div>
+          <div class="timeline-item__card">
+            <div class="timeline-item__meta">
+              <span class="timeline-item__date">Ongoing</span>
+              <span class="timeline-item__type">Creative & Digital Media</span>
+            </div>
+            <h3 class="timeline-item__title">Digital Media Manager & Creator</h3>
+            <p class="timeline-item__company">Al-Shams Youth Circle / Al-Shams Media</p>
+            <p class="timeline-item__desc">Managing digital media production, leading video editing initiatives, and curating community content while actively speaking and engaging with growing online audiences.</p>
+            <div class="timeline-item__highlights">
+              <span class="timeline-item__highlight">Video editing, digital media production, and content strategy</span>
+              <span class="timeline-item__highlight">Social media management and engaging community content creation</span>
+              <span class="timeline-item__highlight">Public speaking and mentoring junior designers through creative courses</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal reveal-delay-1">
+          <div class="timeline-item__dot"></div>
+          <div class="timeline-item__card">
+            <div class="timeline-item__meta">
+              <span class="timeline-item__date">Ongoing</span>
+              <span class="timeline-item__type">Academic & Research</span>
+            </div>
+            <h3 class="timeline-item__title">Student & Independent Researcher</h3>
+            <p class="timeline-item__company">Al Ghazali University & Islamic Institute</p>
+            <p class="timeline-item__desc">Balancing a modern technology education centered on web technologies and problem-solving with a comprehensive, international-level Islamic studies program.</p>
+            <div class="timeline-item__highlights">
+              <span class="timeline-item__highlight">Implementing design thinking and building startup-oriented technology projects</span>
+              <span class="timeline-item__highlight">Active independent learning and experimentation in Agentic AI and automation</span>
+              <span class="timeline-item__highlight">Fourth-year formal studies encompassing Fiqh, Islamic finance, and Arabic</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal reveal-delay-2">
+          <div class="timeline-item__dot"></div>
+          <div class="timeline-item__card">
+            <div class="timeline-item__meta">
+              <span class="timeline-item__date">Past</span>
+              <span class="timeline-item__type">Internships</span>
+            </div>
+            <h3 class="timeline-item__title">Digital Marketing & Content Intern</h3>
+            <p class="timeline-item__company">Various Organizations</p>
+            <p class="timeline-item__desc">Completed paid internships focusing on digital marketing execution, customer research, and comprehensive strategy development.</p>
+            <div class="timeline-item__highlights">
+              <span class="timeline-item__highlight">Conducted market and customer research to guide advertising strategies</span>
+              <span class="timeline-item__highlight">Collaborated on product design and digital marketing initiatives</span>
+              <span class="timeline-item__highlight">Gained practical project coordination and professional communication experience</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <span class="section-label reveal">Projects & Research</span>
+      <h2 class="section-title reveal">Explorations</h2>
+      <p class="section-subtitle reveal">Applying a hands-on, experimental approach to understanding and utilizing modern technology.</p>
+
+      <div class="projects__grid">
+        <!-- Featured Project: Agentic AI -->
+        <div class="project-card project-card--featured reveal">
+          <div class="project-card__content">
+            <span class="project-card__featured-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              Core Focus
+            </span>
+            <h3 class="project-card__title">Agentic AI & Technology Exploration</h3>
+            <p class="project-card__desc">
+              Actively researching and experimenting with Agentic AI, intelligent systems, and AIOps. The focus is on understanding complex problems, breaking them down into fundamental parts, and building practical, autonomous technological solutions as a foundation for a career in AI Engineering.
+            </p>
+            <div class="project-card__tech">
+              <span class="project-card__tech-tag">Agentic AI</span>
+              <span class="project-card__tech-tag">Generative AI</span>
+              <span class="project-card__tech-tag">Python</span>
+              <span class="project-card__tech-tag">Problem Solving</span>
+              <span class="project-card__tech-tag">Research</span>
+            </div>
+          </div>
+          <div class="project-card__visual" aria-hidden="true">
+            <div class="code-preview"><span class="comment">// Experimental AI Approach</span>
+<span class="keyword">class</span> <span class="function">ProblemSolver</span> {
+  <span class="keyword">constructor</span>(problem) {
+    <span class="keyword">this</span>.problem = problem;
+  }
+
+  <span class="keyword">async</span> <span class="function">execute</span>() {
+    <span class="keyword">await</span> <span class="keyword">this</span>.research();
+    <span class="keyword">const</span> parts = <span class="keyword">this</span>.breakDown();
+    <span class="keyword">return</span> <span class="keyword">this</span>.buildSolution(parts);
+  }
+}</div>
+          </div>
+        </div>
+
+        <!-- Project: Media Production -->
+        <div class="project-card reveal">
+          <div class="project-card__header">
+            <div class="project-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20h9"/>
+                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+              </svg>
+            </div>
+            <div class="project-card__links">
+              <a href="https://www.youtube.com/@alshamsmedia" target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label="View Al-Shams Media on YouTube">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/>
+                  <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-card__title">Al-Shams Digital Media Production</h3>
+          <p class="project-card__desc">
+            Producing, editing, and managing video content and digital strategies for Al-Shams Youth Circle, effectively building and retaining an active community through engaging digital media.
+          </p>
+          <div class="project-card__tech">
+            <span class="project-card__tech-tag">Video Editing</span>
+            <span class="project-card__tech-tag">Content Creation</span>
+            <span class="project-card__tech-tag">Social Media</span>
+          </div>
+        </div>
+
+        <!-- Project: Blockchain -->
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-card__header">
+            <div class="project-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="project-card__title">Blockchain & Crypto Research</h3>
+          <p class="project-card__desc">
+            Conducted in-depth research into blockchain technology and cryptocurrency ecosystems, exploring potential real-world applications and formally presenting findings to peers and mentors.
+          </p>
+          <div class="project-card__tech">
+            <span class="project-card__tech-tag">Blockchain</span>
+            <span class="project-card__tech-tag">Research</span>
+            <span class="project-card__tech-tag">Presentation</span>
+          </div>
+        </div>
+
+        <!-- Project: E-commerce -->
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-card__header">
+            <div class="project-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="project-card__title">Digital Marketing & E-commerce</h3>
+          <p class="project-card__desc">
+            Gained practical experience developing advertising strategies, conducting customer research, and exploring e-commerce dynamics through internships and project coordination roles.
+          </p>
+          <div class="project-card__tech">
+            <span class="project-card__tech-tag">Digital Marketing</span>
+            <span class="project-card__tech-tag">E-commerce</span>
+            <span class="project-card__tech-tag">Customer Research</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== EDUCATION SECTION ===== -->
+  <section class="education section" id="education">
+    <div class="container">
+      <span class="section-label reveal">Education</span>
+      <h2 class="section-title reveal">Academic background</h2>
+      <p class="section-subtitle reveal">A multidisciplinary foundation combining technology, modern problem-solving, and traditional Islamic thought.</p>
+
+      <div class="education__grid">
+        <!-- Tech Education -->
+        <div class="edu-card reveal">
+          <span class="edu-card__badge">Present</span>
+          <h3 class="edu-card__degree">Technology Studies</h3>
+          <p class="edu-card__institution">Al Ghazali University School of Technology</p>
+          <p class="edu-card__area">Web Technologies & Programming</p>
+          <p class="edu-card__courses-label">Core Focus Areas</p>
+          <div class="edu-card__courses">
+            <span class="edu-card__course">Design Thinking</span>
+            <span class="edu-card__course">Web Technologies</span>
+            <span class="edu-card__course">Programming</span>
+            <span class="edu-card__course">Problem Solving</span>
+            <span class="edu-card__course">Startup-Oriented Projects</span>
+          </div>
+        </div>
+
+        <!-- Islamic Scholarship -->
+        <div class="edu-card reveal reveal-delay-1">
+          <span class="edu-card__badge">4th Year (Ongoing)</span>
+          <h3 class="edu-card__degree">Islamic Scholarship Program</h3>
+          <p class="edu-card__institution">International Islamic Institute</p>
+          <p class="edu-card__area">Traditional Islamic Studies</p>
+          <p class="edu-card__courses-label">Core Curriculum</p>
+          <div class="edu-card__courses">
+            <span class="edu-card__course">Fiqh (Jurisprudence)</span>
+            <span class="edu-card__course">Islamic Finance</span>
+            <span class="edu-card__course">Arabic Language</span>
+            <span class="edu-card__course">Traditional Islamic Studies</span>
+          </div>
+        </div>
+        
+        <!-- O/A Levels -->
+        <div class="edu-card reveal reveal-delay-2">
+          <span class="edu-card__badge">Completed</span>
+          <h3 class="edu-card__degree">A-Levels & O-Levels</h3>
+          <p class="edu-card__institution">Academic Foundations</p>
+          <p class="edu-card__area">Science & Mathematics</p>
+          <p class="edu-card__courses-label">Key Subjects</p>
+          <div class="edu-card__courses">
+            <span class="edu-card__course">Computer Science</span>
+            <span class="edu-card__course">Mathematics</span>
+            <span class="edu-card__course">Physics & Chemistry</span>
+            <span class="edu-card__course">English, Urdu & Islamiyat</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Languages spoken -->
+      <div class="about__metrics" style="margin-top: var(--space-12);">
+        <div class="metric reveal" style="grid-column: span 2;">
+          <div class="metric__value" style="font-size: var(--text-xl);">Languages</div>
+          <div class="metric__label" style="max-width: none; margin-top: var(--space-2);">
+            English (Fluent) · Urdu (Native) · Arabic (Academic)
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="contact section" id="contact">
+    <div class="contact__ambient" aria-hidden="true">
+      <div class="contact__ambient-orb contact__ambient-orb--1"></div>
+      <div class="contact__ambient-orb contact__ambient-orb--2"></div>
+    </div>
+
+    <div class="container">
+      <div class="contact__inner">
+        <span class="section-label reveal" style="justify-content: center;">Get in Touch</span>
+        <h2 class="contact__title reveal">Let's build something<br>together.</h2>
+        <p class="contact__subtitle reveal">
+          Interested in collaborating on AI engineering, digital media, or technology projects? I'm always open to discussing new ideas, experimental concepts, and opportunities.
+        </p>
+
+        <a href="mailto:hasanabdullahjan@gmail.com" class="contact__email-link reveal" id="contact-email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          hasanabdullahjan@gmail.com
+        </a>
+
+        <div class="contact__profiles reveal">
+          <a href="https://www.linkedin.com/in/hasanabdullahjan/" target="_blank" rel="noopener noreferrer" class="contact__profile-link" id="contact-linkedin">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/Hasan-Abdullah-Jan" target="_blank" rel="noopener noreferrer" class="contact__profile-link" id="contact-github">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+            GitHub
+          </a>
+          <a href="https://www.youtube.com/@alshamsmedia" target="_blank" rel="noopener noreferrer" class="contact__profile-link" id="contact-youtube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+            </svg>
+            YouTube
+          </a>
+        </div>
+
+        <div class="contact__location reveal">
+          <span class="contact__location-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Karachi, Pakistan
+          </span>
+          <span class="contact__location-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            English · Urdu · Arabic
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">
+        &copy; 2026 <span>Hasan Abdullah Jan</span>. All rights reserved.
+      </p>
+      <div class="footer__links">
+        <a href="https://www.linkedin.com/in/hasanabdullahjan/" target="_blank" rel="noopener noreferrer" class="footer__link">LinkedIn</a>
+        <a href="https://github.com/Hasan-Abdullah-Jan" target="_blank" rel="noopener noreferrer" class="footer__link">GitHub</a>
+        <a href="https://www.youtube.com/@alshamsmedia" target="_blank" rel="noopener noreferrer" class="footer__link">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

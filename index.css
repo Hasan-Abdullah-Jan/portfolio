@@ -316,6 +316,8 @@ button {
 .reveal-delay-2 { transition-delay: 0.3s; }
 .reveal-delay-3 { transition-delay: 0.45s; }
 .reveal-delay-4 { transition-delay: 0.6s; }
+.reveal-delay-5 { transition-delay: 0.75s; }
+.reveal-delay-6 { transition-delay: 0.9s; }
 
 
 /* ============================================
@@ -1205,11 +1207,32 @@ button {
   letter-spacing: var(--tracking-tight);
 }
 
+.timeline-item__header .timeline-item__title {
+  margin-bottom: var(--space-1);
+}
+
 .timeline-item__company {
   font-size: var(--text-base);
   color: var(--color-accent-primary);
   margin-bottom: var(--space-6);
   font-weight: 400;
+}
+
+.timeline-item__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  margin-bottom: var(--space-6);
+}
+
+.timeline-item__logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-tertiary);
+  padding: var(--space-2);
+  border: 1px solid var(--color-border);
 }
 
 .timeline-item__desc {

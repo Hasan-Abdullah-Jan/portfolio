@@ -1,6 +1,6 @@
-import { db } from "./firebase.js";
-import { collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
-import { formatDate, readingTime, escapeHtml, safeUrl } from "./blog-common.js";
+import "./theme.js";
+import { fetchPosts, cachedPosts, reviveCached } from "./api.js";
+import { escapeHtml, cardHtml, skeletonCards } from "./blog-common.js";
 
 const grid = document.getElementById('posts');
 const tagBar = document.getElementById('tags');
@@ -9,18 +9,7 @@ let activeTag = null;
 
 function render() {
   const list = activeTag ? posts.filter(p => (p.tags || []).includes(activeTag)) : posts;
-  if (!list.length) { grid.innerHTML = '<p class="blog-empty">No posts yet. Check back soon.</p>'; return; }
-  grid.innerHTML = list.map(p => {
-    const img = safeUrl(p.coverImage);
-    return `<a class="post-card" href="post.html?slug=${encodeURIComponent(p.slug)}">
-      ${img ? `<img class="post-card__img" src="${escapeHtml(img)}" alt="" loading="lazy">` : ''}
-      <div class="post-card__body">
-        <span class="post-card__meta">${formatDate(p.publishedAt)} · ${readingTime(p.content)}</span>
-        <h2 class="post-card__title">${escapeHtml(p.title)}</h2>
-        <p class="post-card__excerpt">${escapeHtml(p.excerpt)}</p>
-      </div>
-    </a>`;
-  }).join('');
+  grid.innerHTML = list.length ? list.map(p => cardHtml(p)).join('') : '<p class="blog-empty">No posts yet. Check back soon.</p>';
 }
 
 function renderTags() {
@@ -36,12 +25,15 @@ tagBar.addEventListener('click', e => {
   renderTags(); render();
 });
 
+// Show cached posts instantly, then refresh from the network.
+const cached = cachedPosts();
+if (cached) { posts = reviveCached(cached); renderTags(); render(); }
+else grid.innerHTML = skeletonCards(3);
+
 try {
-  const snap = await getDocs(query(collection(db, 'posts'), where('published', '==', true)));
-  posts = snap.docs.map(d => ({ slug: d.id, ...d.data() }))
-    .sort((a, b) => (b.publishedAt?.seconds || 0) - (a.publishedAt?.seconds || 0));
+  posts = await fetchPosts();
   renderTags(); render();
 } catch (err) {
   console.error(err);
-  grid.innerHTML = '<p class="blog-empty">Could not load posts right now.</p>';
+  if (!cached) grid.innerHTML = '<p class="blog-empty">Could not load posts right now.</p>';
 }

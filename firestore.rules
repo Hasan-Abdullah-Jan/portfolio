@@ -13,6 +13,28 @@ service cloud.firestore {
       allow create, update, delete: if isAdmin();
     }
 
+    // Visitors can submit comments (no account needed). New comments are always unapproved;
+    // only the admin can approve, hide or delete them. The public sees approved comments only.
+    match /comments/{id} {
+      allow read: if resource.data.approved == true || isAdmin();
+
+      allow create: if request.resource.data.keys().hasOnly(['postSlug', 'name', 'text', 'approved', 'createdAt'])
+                    && request.resource.data.approved == false
+                    && request.resource.data.createdAt == request.time
+                    && request.resource.data.postSlug is string
+                    && request.resource.data.postSlug.size() > 0
+                    && request.resource.data.postSlug.size() <= 100
+                    && request.resource.data.name is string
+                    && request.resource.data.name.size() >= 1
+                    && request.resource.data.name.size() <= 60
+                    && request.resource.data.text is string
+                    && request.resource.data.text.size() >= 2
+                    && request.resource.data.text.size() <= 1500
+                    && get(/databases/$(database)/documents/posts/$(request.resource.data.postSlug)).data.published == true;
+
+      allow update, delete: if isAdmin();
+    }
+
     match /{document=**} {
       allow read, write: if false;
     }

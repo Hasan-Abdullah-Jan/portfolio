@@ -3,8 +3,6 @@
    Dark Golden · Premium · Soft Luxury
    ============================================ */
 
-/* --- Google Fonts — DM Sans for soft elegance --- */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=DM+Mono:wght@400;500&display=swap');
 
 /* --- CSS Custom Properties --- */
 :root {
@@ -300,16 +298,13 @@ button {
 .reveal {
   opacity: 0;
   transform: translateY(30px) scale(0.98);
-  filter: blur(10px);
   transition: opacity var(--transition-elegant),
-              transform var(--transition-elegant),
-              filter var(--transition-elegant);
+              transform var(--transition-elegant);
 }
 
 .reveal.visible {
   opacity: 1;
   transform: translateY(0) scale(1);
-  filter: blur(0);
 }
 
 .reveal-delay-1 { transition-delay: 0.15s; }
@@ -333,7 +328,6 @@ button {
   z-index: 1000;
   transition: background var(--transition-slow),
               box-shadow var(--transition-slow),
-              backdrop-filter var(--transition-slow),
               padding var(--transition-base);
 }
 
@@ -566,7 +560,6 @@ button {
 .hero__orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(160px);
   opacity: 0.5;
   animation: floatOrb 25s ease-in-out infinite;
   will-change: transform;
@@ -575,7 +568,7 @@ button {
 .hero__orb--1 {
   width: 700px;
   height: 700px;
-  background: var(--color-accent-glow);
+  background: radial-gradient(circle, var(--color-accent-glow-md) 0%, transparent 68%);
   top: -15%;
   right: -15%;
   animation-delay: 0s;
@@ -584,7 +577,7 @@ button {
 .hero__orb--2 {
   width: 500px;
   height: 500px;
-  background: var(--color-accent-glow-md);
+  background: radial-gradient(circle, var(--color-accent-glow-md) 0%, transparent 68%);
   bottom: -5%;
   left: -15%;
   animation-delay: -9s;
@@ -620,8 +613,6 @@ button {
   font-weight: 400;
   color: var(--color-accent-primary);
   margin-bottom: var(--space-12);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   letter-spacing: 0.02em;
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition-spring), box-shadow var(--transition-spring), border-color var(--transition-spring);
@@ -734,7 +725,6 @@ button {
   background: rgba(255, 255, 255, 0.02);
   color: var(--color-text-primary);
   border: 1px solid var(--color-border);
-  backdrop-filter: blur(10px);
 }
 
 .btn--secondary:hover {
@@ -878,8 +868,6 @@ button {
   border-radius: var(--radius-xl);
   transition: border-color var(--transition-slow),
               box-shadow var(--transition-slow);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   transform-style: preserve-3d;
   will-change: transform;
 }
@@ -999,8 +987,6 @@ button {
               background var(--transition-slow);
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
   transform-style: preserve-3d;
   will-change: transform;
 }
@@ -1157,8 +1143,6 @@ button {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-2xl);
   transition: all var(--transition-slow);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
 }
 
 .timeline-item:hover .timeline-item__card {
@@ -1299,8 +1283,6 @@ button {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
   transform-style: preserve-3d;
   will-change: transform;
 }
@@ -1533,8 +1515,6 @@ button {
               box-shadow var(--transition-slow),
               background var(--transition-slow);
   position: relative;
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
   transform-style: preserve-3d;
   will-change: transform;
 }
@@ -1672,10 +1652,8 @@ button {
   width: 800px;
   height: 800px;
   border-radius: 50%;
-  filter: blur(200px);
-  opacity: 0.25;
-  background: var(--color-accent-glow-md);
-  animation: floatOrb 30s ease-in-out infinite alternate;
+  opacity: 0.35;
+  background: radial-gradient(circle, var(--color-accent-glow-md) 0%, transparent 68%);
 }
 
 .contact__ambient-orb--1 {
@@ -1686,7 +1664,6 @@ button {
 .contact__ambient-orb--2 {
   bottom: -40%;
   right: -25%;
-  animation-delay: -15s;
 }
 
 .contact__inner {
@@ -1726,8 +1703,6 @@ button {
   color: var(--color-text-primary);
   transition: all var(--transition-slow);
   margin-bottom: var(--space-16);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
   letter-spacing: var(--tracking-tight);
 }
 
@@ -1868,8 +1843,6 @@ button {
   transform: translateY(20px);
   transition: all var(--transition-slow);
   z-index: 100;
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
 }
 
 .back-to-top.visible {

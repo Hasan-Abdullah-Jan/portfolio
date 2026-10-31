@@ -1,7 +1,8 @@
 import { db, auth } from "./firebase.js";
 import { signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
-import { collection, doc, getDoc, getDocs, setDoc, deleteDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
-import { renderMarkdown, formatDate, escapeHtml } from "./blog-common.js";
+import { collection, doc, getDoc, getDocs, setDoc, updateDoc, deleteDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+import "./theme.js";
+import { renderMarkdown, formatDate, escapeHtml, readMinutes } from "./blog-common.js";
 
 // UI gating only. The real protection is firestore.rules and the server-side check in api/cloudinary-sign.js.
 const ADMIN_UID = '9gGrEZYFHyasN0q0Ohjj5HNpFls1';
@@ -46,6 +47,7 @@ onAuthStateChanged(auth, async user => {
 // ---------- List ----------
 async function loadList() {
   show('list');
+  loadComments();
   say($('list-msg'), 'Loading…');
   try {
     const snap = await getDocs(collection(db, 'posts'));
@@ -68,6 +70,47 @@ async function loadList() {
     say($('list-msg'), 'Could not load posts: ' + err.code, 'err');
   }
 }
+
+// ---------- Comment moderation ----------
+async function loadComments() {
+  say($('comments-msg'), 'Loading…');
+  try {
+    const snap = await getDocs(collection(db, 'comments'));
+    const items = snap.docs.map(d => ({ id: d.id, ...d.data() }))
+      .sort((a, b) => (a.approved - b.approved) || ((b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0)));
+    const pending = items.filter(c => !c.approved).length;
+    $('pending-badge').textContent = pending + ' pending';
+    $('pending-badge').classList.toggle('hidden', !pending);
+    say($('comments-msg'), items.length ? '' : 'No comments yet.');
+    $('comment-rows').innerHTML = items.map(c => `
+      <tr>
+        <td><strong>${escapeHtml(c.name)}</strong> <span style="color:var(--color-text-muted)">· ${formatDate(c.createdAt)}</span><br>${escapeHtml(c.text)}</td>
+        <td><a class="link-btn" href="post.html?slug=${encodeURIComponent(c.postSlug)}" target="_blank" rel="noopener">${escapeHtml(c.postSlug)}</a></td>
+        <td><span class="badge ${c.approved ? 'badge--live' : 'badge--draft'}">${c.approved ? 'Approved' : 'Pending'}</span></td>
+        <td>
+          ${c.approved ? `<button class="link-btn" data-unapprove="${escapeHtml(c.id)}">Hide</button>` : `<button class="link-btn" data-approve="${escapeHtml(c.id)}">Approve</button>`}
+          <button class="link-btn danger" data-cdel="${escapeHtml(c.id)}">Delete</button>
+        </td>
+      </tr>`).join('');
+  } catch (err) {
+    console.error(err);
+    say($('comments-msg'), 'Could not load comments: ' + err.code, 'err');
+  }
+}
+
+$('comment-rows').addEventListener('click', async e => {
+  const b = e.target.closest('[data-approve],[data-unapprove],[data-cdel]');
+  if (!b) return;
+  try {
+    if (b.dataset.cdel) {
+      if (!confirm('Delete this comment permanently?')) return;
+      await deleteDoc(doc(db, 'comments', b.dataset.cdel));
+    } else {
+      await updateDoc(doc(db, 'comments', b.dataset.approve || b.dataset.unapprove), { approved: !!b.dataset.approve });
+    }
+    loadComments();
+  } catch (err) { say($('comments-msg'), 'Action failed: ' + err.code, 'err'); }
+});
 
 $('post-rows').addEventListener('click', async e => {
   const edit = e.target.closest('[data-edit]');
@@ -140,7 +183,12 @@ async function openEditor(slug) {
   show('edit');
 }
 
-function updatePreview() { $('preview').innerHTML = renderMarkdown(f.content.value); }
+let previewSeq = 0;
+async function updatePreview() {
+  const seq = ++previewSeq;
+  const html = await renderMarkdown(f.content.value);
+  if (seq === previewSeq) $('preview').innerHTML = html;
+}
 f.content.addEventListener('input', updatePreview);
 f.slug.addEventListener('input', () => { slugTouched = true; });
 f.title.addEventListener('input', () => { if (!editing && !slugTouched) f.slug.value = slugify(f.title.value); });
@@ -155,6 +203,7 @@ $('save').addEventListener('click', async () => {
     title,
     excerpt: f.excerpt.value.trim(),
     content: f.content.value,
+    readMins: readMinutes(f.content.value),
     coverImage: f.cover.value.trim(),
     tags: f.tags.value.split(',').map(t => t.trim()).filter(Boolean),
     published,

@@ -22,6 +22,7 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="blog.css">
 </head>
 <body>
 
@@ -38,7 +39,7 @@
         <a href="#experience" class="nav__link">Experience</a>
         <a href="#projects" class="nav__link">Projects</a>
         <a href="#education" class="nav__link">Education</a>
-        <a href="blog.html" class="nav__link">Blog</a>
+        <a href="#blog" class="nav__link">Blog</a>
         <a href="#contact" class="nav__link">Contact</a>
       </div>
 
@@ -94,7 +95,7 @@
       <a href="#experience" class="nav__link">Experience</a>
       <a href="#projects" class="nav__link">Projects</a>
       <a href="#education" class="nav__link">Education</a>
-      <a href="blog.html" class="nav__link">Blog</a>
+      <a href="#blog" class="nav__link">Blog</a>
       <a href="#contact" class="nav__link">Contact</a>
       <div class="nav__socials">
         <a href="https://www.linkedin.com/in/hasanabdullahjan/" target="_blank" rel="noopener noreferrer" class="nav__social-link" aria-label="LinkedIn">
@@ -685,6 +686,21 @@
   </section>
 
 
+  <!-- ===== BLOG SECTION ===== -->
+  <section class="blog section" id="blog">
+    <div class="container">
+      <span class="section-label reveal">Blog</span>
+      <h2 class="section-title reveal">Latest writing</h2>
+      <p class="section-subtitle reveal">Thoughts on AI, technology, and creative work.</p>
+
+      <div class="post-grid" id="home-posts" style="padding-bottom: var(--space-10);"><p class="blog-empty">Loading…</p></div>
+      <div style="text-align: center;">
+        <a href="blog.html" class="btn btn--secondary">View all posts</a>
+      </div>
+    </div>
+  </section>
+
+
   <!-- ===== CONTACT SECTION ===== -->
   <section class="contact section" id="contact">
     <div class="contact__ambient" aria-hidden="true">
@@ -779,5 +795,6 @@
 
   <!-- JavaScript -->
   <script src="script.js"></script>
+  <script type="module" src="js/home-blog.js"></script>
 </body>
 </html>

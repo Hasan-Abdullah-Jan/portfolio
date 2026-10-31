@@ -74,15 +74,37 @@ $('post-rows').addEventListener('click', async e => {
   const del = e.target.closest('[data-del]');
   if (edit) openEditor(edit.dataset.edit);
   if (del && confirm(`Delete "${del.dataset.del}" permanently?`)) {
-    try { await deleteDoc(doc(db, 'posts', del.dataset.del)); loadList(); }
+    try { await deleteDoc(doc(db, 'posts', del.dataset.del)); clearDrafts(del.dataset.del); loadList(); }
     catch (err) { say($('list-msg'), 'Delete failed: ' + err.code, 'err'); }
   }
 });
 $('new-post').addEventListener('click', () => openEditor(null));
 
+// ---------- Local draft auto-save (this browser only) ----------
+const draftKey = slug => 'blog-draft:' + (slug || 'new');
+let dirty = false;
+let draftTimer;
+
+function readDraft(key) {
+  try { return JSON.parse(localStorage.getItem(key)); } catch { return null; }
+}
+function clearDrafts(...slugs) {
+  try { slugs.forEach(s => localStorage.removeItem(draftKey(s))); } catch {}
+}
+function queueDraftSave() {
+  dirty = true;
+  clearTimeout(draftTimer);
+  draftTimer = setTimeout(() => {
+    const fields = Object.fromEntries(Object.entries(f).map(([k, i]) => [k, k === 'published' ? i.checked : i.value]));
+    try { localStorage.setItem(draftKey(editing ? f.slug.value : null), JSON.stringify({ fields, savedAt: Date.now() })); } catch {}
+  }, 500);
+}
+Object.values(f).forEach(i => { i.addEventListener('input', queueDraftSave); i.addEventListener('change', queueDraftSave); });
+window.addEventListener('beforeunload', e => { if (dirty) e.preventDefault(); });
+
 // ---------- Editor ----------
 async function openEditor(slug) {
-  editing = null; slugTouched = false;
+  editing = null; slugTouched = false; dirty = false;
   say($('edit-msg'), '');
   Object.values(f).forEach(i => { i.value = ''; });
   f.published.checked = false;
@@ -100,6 +122,19 @@ async function openEditor(slug) {
     f.content.value = editing.content || '';
     f.published.checked = !!editing.published;
     $('edit-heading').textContent = 'Edit post';
+  }
+  const draft = readDraft(draftKey(slug));
+  if (draft && draft.fields) {
+    const d = draft.fields;
+    f.title.value = d.title ?? f.title.value;
+    if (!editing) { f.slug.value = d.slug ?? ''; slugTouched = !!d.slug; }
+    f.excerpt.value = d.excerpt ?? '';
+    f.tags.value = d.tags ?? '';
+    f.cover.value = d.cover ?? '';
+    f.content.value = d.content ?? '';
+    f.published.checked = !!d.published;
+    dirty = true;
+    say($('edit-msg'), 'Restored unsaved changes from ' + new Date(draft.savedAt).toLocaleString() + '. Click Save to keep them.', 'ok');
   }
   updatePreview();
   show('edit');
@@ -127,6 +162,7 @@ $('save').addEventListener('click', async () => {
     createdAt: editing?.createdAt || serverTimestamp(),
     publishedAt: published ? (editing?.publishedAt || serverTimestamp()) : (editing?.publishedAt || null)
   };
+  const wasNew = !editing;
   try {
     if (!editing) {
       if ((await getDoc(doc(db, 'posts', slug))).exists()) return say($('edit-msg'), 'That slug is already used.', 'err');
@@ -136,6 +172,9 @@ $('save').addEventListener('click', async () => {
     editing = { ...data, createdAt: editing?.createdAt, publishedAt: editing?.publishedAt };
     // re-read to pick up server timestamps for later saves
     editing = (await getDoc(doc(db, 'posts', slug))).data();
+    clearTimeout(draftTimer);
+    clearDrafts(slug, ...(wasNew ? [null] : []));
+    dirty = false;
     say($('edit-msg'), published ? 'Saved and published.' : 'Saved as draft.', 'ok');
   } catch (err) {
     console.error(err);

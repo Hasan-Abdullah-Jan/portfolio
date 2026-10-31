@@ -169,7 +169,10 @@ $('file').addEventListener('change', async () => {
   try {
     const token = await auth.currentUser.getIdToken();
     const sigRes = await fetch('/api/cloudinary-sign', { method: 'POST', headers: { Authorization: 'Bearer ' + token } });
-    if (!sigRes.ok) throw new Error('Signing failed (' + sigRes.status + ')');
+    if (!sigRes.ok) {
+      const detail = await sigRes.json().catch(() => ({}));
+      throw new Error('Signing failed (' + sigRes.status + ')' + (detail.error ? ': ' + detail.error : ''));
+    }
     const { cloudName, apiKey, timestamp, signature, folder } = await sigRes.json();
     const fd = new FormData();
     fd.append('file', file);

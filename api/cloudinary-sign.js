@@ -10,8 +10,10 @@ module.exports = async (req, res) => {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
   const { CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET, ADMIN_UID, FIREBASE_API_KEY } = process.env;
-  if (!CLOUDINARY_CLOUD_NAME || !CLOUDINARY_API_KEY || !CLOUDINARY_API_SECRET || !ADMIN_UID || !FIREBASE_API_KEY) {
-    return res.status(500).json({ error: 'Server is not configured' });
+  const missing = Object.entries({ CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET, ADMIN_UID, FIREBASE_API_KEY })
+    .filter(([, v]) => !v).map(([k]) => k);
+  if (missing.length) {
+    return res.status(500).json({ error: 'Server is not configured. Missing: ' + missing.join(', ') });
   }
 
   const match = /^Bearer (.+)$/.exec(req.headers.authorization || '');

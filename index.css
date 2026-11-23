@@ -1491,6 +1491,36 @@ button {
 
 
 /* ============================================
+   BUILDS SECTION
+   ============================================ */
+
+.builds {
+  background: var(--color-bg-secondary);
+}
+
+.builds__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  margin-top: var(--space-16);
+  perspective: 1500px;
+}
+
+.builds + .education {
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.build-card {
+  padding: var(--space-8);
+}
+
+.build-card .project-card__title {
+  font-size: var(--text-xl);
+  font-weight: 500;
+}
+
+
+/* ============================================
    EDUCATION SECTION
    ============================================ */
 
@@ -1869,7 +1899,17 @@ button {
    RESPONSIVE DESIGN
    ============================================ */
 
+@media (max-width: 1100px) {
+  .nav__links {
+    gap: var(--space-5);
+  }
+}
+
 @media (max-width: 1024px) {
+  .nav__socials {
+    display: none;
+  }
+
   .about__grid {
     grid-template-columns: 1fr;
     gap: var(--space-12);
@@ -1881,6 +1921,10 @@ button {
 
   .project-card--featured {
     grid-template-columns: 1fr;
+  }
+
+  .builds__grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .about__metrics {
@@ -1973,6 +2017,11 @@ button {
 
   .timeline-item__card {
     padding: var(--space-6) var(--space-8);
+  }
+
+  /* Builds */
+  .builds__grid {
+    grid-template-columns: 1fr;
   }
 
   /* Projects */
